@@ -1,5 +1,7 @@
 {
    "name": "formigone/php-chain",
+   "type": "project",
+   "license": "MIT",
    "authors": [
       {
          "name": "Rodrigo Silveira",
@@ -12,3 +14,4 @@
       }
    }
 }
+
