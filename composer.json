@@ -1,0 +1,14 @@
+{
+   "name": "formigone/php-chain",
+   "authors": [
+      {
+         "name": "Rodrigo Silveira",
+         "email": "webmaster@rodrigo-silveira.com"
+      }
+   ],
+   "autoload": {
+      "psr-4": {
+         "Formigone\\": "src/Formigone/"
+      }
+   }
+}
