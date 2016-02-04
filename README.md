@@ -44,7 +44,7 @@ Suppose you have an array of arrays such as the following:
 
 With that on hand, you may want to ```map``` over that array, then ```filter``` it, and possibly ```diff``` those objects against an identical or similar collection representing the same data models.
 
-    $activeUsers = array_filer($users, function($user) {
+    $activeUsers = array_filter($users, function($user) {
           return $user['active'];
     });
 
