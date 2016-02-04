@@ -10,6 +10,7 @@ The goal of this simple library is to help you work with arrays in PHP, particul
 
 Suppose you have an array of arrays such as the following:
 
+```php
     $users = array(
         array(
             'id' => 4,
@@ -41,9 +42,11 @@ Suppose you have an array of arrays such as the following:
             'active' => true
         ),
     );
+```
 
 With that on hand, you may want to ```map``` over that array, then ```filter``` it, and possibly ```diff``` those objects against an identical or similar collection representing the same data models.
 
+```php
     $activeUsers = array_filter($users, function($user) {
           return $user['active'];
     });
@@ -51,15 +54,18 @@ With that on hand, you may want to ```map``` over that array, then ```filter``` 
     $activeUsernames = array_map(function($user) {
           return $user['username'];
     }, $activeUsers);
+```
 
 One problem you've noticed if you've ever had to use some of PHP's array functions is that the order of the arguments is not consistent. Does the predicate function go before or after the array?
 
 The other problem php-chain aims to solve is to using these functions more terse, and without dropping those intermediary collections along the way.
 
+```php
     $activeUsernames = Formigone\Chain::from($users)
          ->filter(function($user){ return $user['active']; })
          ->map(function($user){ return $user['username']; })
          ->get();
+```
 
 ### Supported functionality
 
