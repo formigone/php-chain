@@ -15,9 +15,48 @@ class Chain
       $this->arr = $arr;
    }
 
+   /**
+    * Returns the internal array structure as is (keys might be all weird due to filtering), or as a properly indexed array (numerical indices)
+    *
+    * @param bool|false $valuesOnly
+    *
+    * @return array
+    */
    public function get($valuesOnly = false)
    {
       return $valuesOnly ? array_values($this->arr) : $this->arr;
+   }
+
+   /**
+    * Returns the first element of the internal array. If the array is empty, returns null. If the array has string keys (or lacks a key of "zero"), it returns the value matching the first key returned from PHP's array_keys method.
+    * @return mixed
+    */
+   public function first()
+   {
+      if (empty($this->arr)) {
+         return null;
+      }
+
+      if (array_key_exists(0, $this->arr)) {
+         return $this->arr[0];
+      }
+
+      $keys = array_keys($this->arr);
+      return $this->arr[$keys[0]];
+   }
+
+   /**
+    * Returns the last element of the internal array. If the array is empty, returns null. Else, it returns the value matching the last key returned from PHP's array_keys method.
+    * @return mixed
+    */
+   public function last()
+   {
+      if (empty($this->arr)) {
+         return null;
+      }
+
+      $keys = array_keys($this->arr);
+      return $this->arr[$keys[count($keys) - 1]];
    }
 
    static public function from(array $arr)
