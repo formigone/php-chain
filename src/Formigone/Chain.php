@@ -28,6 +28,16 @@ class Chain
    }
 
    /**
+    * Returns only the keys accumulated on the internal list. This is useful when you want to dedupe items by reducing the collection into a hash keyed by the repeated value.
+    * 
+    * @return array
+    */
+   public function getKeys()
+   {
+      return array_keys($this->arr);
+   }
+
+   /**
     * Returns the first element of the internal array. If the array is empty, returns null. If the array has string keys (or lacks a key of "zero"), it returns the value matching the first key returned from PHP's array_keys method.
     * @return mixed
     */
