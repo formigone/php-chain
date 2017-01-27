@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         verbose="true"
+         colors="true">
+
+    <testsuites>
+        <testsuite name="chain">
+            <directory suffix="Test.php">Chain</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

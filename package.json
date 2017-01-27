@@ -1,0 +1,9 @@
+{
+  "name": "php-chain",
+  "version": "0.0.0",
+  "description": "A thin abstraction over PHP arrays to help you easily chain array transformation functions.",
+  "scripts": {
+    "test": "./vendor/bin/phpunit --bootstrap tests/bootstrap.php --configuration tests/phpunit.xml --colors=always --verbose",
+    "docs": "./vendor/bin/phpdoc -d src/Formigone/ -t ./docs --ignore=vendor/* --template=./vendor/cvuorinen/phpdoc-markdown-public/data/templates/markdown-public"
+  }
+}

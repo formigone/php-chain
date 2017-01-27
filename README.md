@@ -76,8 +76,3 @@ The other problem php-chain aims to solve is to using these functions more terse
  * ```diff($predicateFunction, $otherArray)``` - iterates the current array with each element from the other array, keeping values unique to the current array (whenever the predicate function returns false)
  * ```flip()``` - returns the current array flipping keys and values (not destroying the current array)
  * ```get()``` - returns a copy of the current array
-
-### TODO:
-
- * Write unit tests
- * Extend functionality
