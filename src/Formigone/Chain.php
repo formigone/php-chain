@@ -87,7 +87,7 @@ class Chain
      *
      * Example:
      *
-     * ```
+     * ```php
      * $array = [1, 2, 3, 4, 5];
      * $squares = Chain::from($array)
      *    ->map(function($value) {
@@ -116,7 +116,7 @@ class Chain
      *
      * Example:
      *
-     * ```
+     * ```php
      * $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
      * $oddValues = Chain::from($array)
      *    ->filter(function($value) {
