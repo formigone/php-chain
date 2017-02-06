@@ -41,21 +41,24 @@ class Chain
     }
 
     /**
-     * Returns the first element of the internal array. If the array is empty, returns null. If the array has string keys (or lacks a key of "zero"), it returns the value matching the first key returned from PHP's array_keys method.
-     * @return mixed
+     * Returns the first N elements of the internal array. If the array is empty, returns null. If the array has string keys (or lacks a key of "zero"), it returns the value matching the first key returned from PHP's array_keys method.
+     * @param int $amount
+     * @return array
      */
-    public function first()
+    public function first($amount = 1)
     {
-        if (empty($this->arr)) {
+        if (empty($this->arr) || $amount < 1) {
             return null;
         }
 
-        if (array_key_exists(0, $this->arr)) {
-            return $this->arr[0];
+        $arr = [];
+        foreach ($this->arr as $item) {
+            $arr[] = $item;
+            if (count($arr) === $amount) {
+                break;
+            }
         }
-
-        $keys = array_keys($this->arr);
-        return $this->arr[$keys[0]];
+        return $arr;
     }
 
     /**
