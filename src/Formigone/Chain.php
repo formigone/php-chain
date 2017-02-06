@@ -217,4 +217,10 @@ class Chain
     {
         return array_flip($this->arr);
     }
+
+    public function shuffle()
+    {
+        shuffle($this->arr);
+        return $this;
+    }
 }
